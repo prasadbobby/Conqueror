@@ -17,9 +17,20 @@ void delay(int ticks)
 	}
 }
 
+void print_string(char *str)
+{
+	_syscall(SYS_write, (void *)1, str, (void *)_strlen(str), 0, 0, 0);
+}
 
 int main() 
-{
+{	
+	char *msg = "Conqueror OS";
+	delay(1000000000);
+	print_string(msg);
+	while(1)
+	{	
+		delay(100000000);
+		print_string("tick\n");
 	return 0;
 }
 
