@@ -9,6 +9,14 @@ unsigned long _strlen(char *sz)
 	}
 	return 0;
 }
+void delay(int ticks)
+{
+	for(int i=0;i<ticks;i++)
+	{
+		// commenting..
+	}
+}
+
 
 int main() 
 {
