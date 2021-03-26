@@ -7,3 +7,14 @@ DESTDIR ?= /mnt/Conqueror
 
 PREFIX ?= $(DESTDIR)
 BINDIR ?= $(PREFIX?)/sbin
+%_c.o : %.c
+  $(CC) $(FLAGS) -c $< -o $@
+  
+%_s.o : %.s
+  $(CC) $(FLAGS) -c $< -o $@
+  
+install:
+  cp $(TARGET) $(BINDIR)/
+
+clean:
+  rm *.o $(TARGET)
