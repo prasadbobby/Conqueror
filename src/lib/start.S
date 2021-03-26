@@ -9,3 +9,8 @@ _syscall:
 	movq 8(%rsp), %r9
 	syscall
 	ret
+	
+.globl _start
+_start:
+	call main
+	
