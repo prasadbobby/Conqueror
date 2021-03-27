@@ -6,7 +6,7 @@ DESTDIR ?= /mnt/Conqueror
 
 
 PREFIX ?= $(DESTDIR)
-BINDIR ?= $(PREFIX?)/sbin
+BINDIR ?= $(PREFIX)/sbin
 %_c.o : %.c
   $(CC) $(FLAGS) -c $< -o $@
   
