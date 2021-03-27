@@ -1,16 +1,16 @@
 #include <syscall.h>
 #include <lib.h>
-unsigned long open_file(char *fn, int flags)
+unsigned long sys_open(char *fn, int flags)
 {
 	return _syscall(SYS_open, fn, flags, 0, 0, 0, 0);
 }
 
-unsigned long read_file(unsigned long fd, char *buff, unsigned long size)
+unsigned long sys_read(unsigned long fd, char *buff, unsigned long size)
 {
 	return _syscall(SYS_read, fd, buff, size, 0, 0, 0);
 }
 
-unsigned long _strlen(char *sz)
+unsigned str_len(char *sz)
 {
 	int count = 0;
 	while(*sz++)
@@ -28,7 +28,7 @@ void delay(int ticks)
 	}
 }
 
-void print_string(char *str)
+void str_print(char *str)
 {
 	_syscall(SYS_write, (void *)1, str, (void *)_strlen(str), 0, 0, 0);
 }
