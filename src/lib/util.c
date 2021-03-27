@@ -1,3 +1,4 @@
+#include <syscall.h>
 #include <lib.h>
 
 unsigned str_len(char *sz)
