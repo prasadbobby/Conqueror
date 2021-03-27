@@ -1,5 +1,5 @@
 #include <syscall.h>
-
+#include <lib.h>
 unsigned long open_file(char *fn, int flags)
 {
 	return _syscall(SYS_open, fn, flags, 0, 0, 0, 0);
