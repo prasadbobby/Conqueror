@@ -8,3 +8,4 @@ extern unsigned long sys_reboot();
 extern unsigned long str_len(char *sz);
 extern void str_print(char *str);
 extern void delay(int ticks);
+extern void sleep_sec(int sec);
