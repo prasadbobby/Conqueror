@@ -7,21 +7,21 @@ int main()
 	char *msg = "Conqueror_1.0 Initializing";
 	delay(100000000);
 	
-	print_string(msg);
+	str_print(msg);
 	delay(100000000);
 	char buff[255];
 	char *filename = "/src/init/init.c";
-	print_string("Opening file; ");
-	print_string(filename);
-	print_string("\n");
+	str_print("Opening file; ");
+	str_print(filename);
+	str_print("\n");
 	
 	unsigned long fd = open_file(filename, O_RDONLY);
 	read_file(fd, buff, sizeof(buff));
-	print_string(buff);
+	str_print(buff);
 	while(1)
 	{
 		delay(100000000);
-		print_string("CONQUEROR LOADING\n");
+		str_print("CONQUEROR LOADING\n");
 	}
 	return 0;
 }
