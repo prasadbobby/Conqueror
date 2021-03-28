@@ -15,5 +15,15 @@ unsigned long sys_reboot()
 	return _syscall(SYS_reboot, (void *)0xfee1dead, (void *)672274793, (void *)0x1234567, 0, 0, 0);
 }
 
+unsigned long sys_nanosleep(const struct timespec *req, struct timespec *rem) 
+{
+	return _syscall(SYS_nanosleep, req, rem, 0, 0, 0, 0);
+}
 
-
+void sleep_sec(int sec)
+{
+	struct timespec tm;
+	tm.tv_nsec = 0;
+	tm.tv_sec = sec;
+	sys_nanosleep(&tm, null);
+}
