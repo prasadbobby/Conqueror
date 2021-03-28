@@ -15,8 +15,8 @@ int main()
 	str_print(filename);
 	str_print("\n");
 	
-	unsigned long fd = open_file(filename, O_RDONLY);
-	read_file(fd, buff, sizeof(buff));
+	unsigned long fd = sys_open(filename, O_RDONLY);
+	sys_read(fd, buff, sizeof(buff));
 	str_print(buff);
 	while(1)
 	{
