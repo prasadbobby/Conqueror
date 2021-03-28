@@ -1,5 +1,6 @@
 #include <syscall.h>
 #include <fcntl.h>
+#include <lib.h>
 
 int main() 
 {
