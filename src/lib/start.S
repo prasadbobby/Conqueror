@@ -10,7 +10,5 @@ _syscall:
 	syscall
 	ret
 	
-.globl _start
-_start:
-	call main
+
 	
