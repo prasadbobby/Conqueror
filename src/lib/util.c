@@ -21,5 +21,5 @@ void delay(int ticks)
 
 void str_print(char *str)
 {
-	_syscall(SYS_write, (void *)1, str, (void *)_strlen(str), 0, 0, 0);
+	_syscall(SYS_write, (void *)1, str, (void *)str_len(str), 0, 0, 0);
 }
