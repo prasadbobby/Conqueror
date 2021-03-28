@@ -5,7 +5,7 @@ LDFLAGS = -lmy -L$(MYOS_PATH)/lib
 
 all: $(TARGET)
 $(TARGET): $(OBJECTS)
-  $(CC) $(LDFLAGS) -o $(TARGET) $(OBJECTS)
+  $(CC) $(LDFLAGS) $(FLAGS) -o $(TARGET) $(OBJECTS)
   
   
 include ../base.mk
