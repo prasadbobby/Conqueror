@@ -10,3 +10,8 @@ OBJECTS += $(SSOURCES:.S=_S.o)
 BINDER = $(PREFIX)/lib
 
 all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	ld $(FLAGS) $(LDFLAGS) -o $(TARGET) $(OBJECTS)
+
+include ../base.mk
