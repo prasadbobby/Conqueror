@@ -20,3 +20,9 @@ char console_read()
   }
   retun c;
 }
+
+void console_write(char c)
+{
+  sys_write(console_fd, &c, 1);
+}
+  
