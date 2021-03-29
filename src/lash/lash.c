@@ -1,6 +1,3 @@
-#include <stdio.h>
-int main()
-{
-	printf("Hello world");
-	return 0;
-}
+#include <lib.h>
+#include <fcntl.h>
+#include <time.h>
