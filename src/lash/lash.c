@@ -26,3 +26,38 @@ void console_write(char c)
   sys_write(console_fd, &c, 1);
 }
   
+int read_line(char *buff, int max)
+{
+  int i=0;
+  for( ;i<max;i++)
+  {
+    char c = console.read();
+    if(c==0)
+    {
+      i--;
+      continue;
+    }
+    console_write(c);
+    buff[i] = c;
+    if(c=='\b')
+    {
+      i--;
+      buff[i] = 0;
+    }
+    if(c=='\n')
+    {
+      buff[i] = 0;
+      return i;
+    }
+  }
+  return i;
+  
+  int main()
+  {
+    str_print("\033[H\033[J");
+    str_print("lash v0.0.0.1 \n");
+    str_print(" :> ");
+    console_open();
+  }
+  
+    
