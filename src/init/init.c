@@ -18,11 +18,13 @@ int main()
 	unsigned long fd = sys_open(filename, O_RDONLY);
 	sys_read(fd, buff, sizeof(buff));
 	str_print(buff);
-	while(1)
+	for(int t=0;t<3;t++)
 	{
 		sleep_sec(1);
 		str_print("CONQUEROR LOADING\n");
 	}
+	
+	sys_reboot();
 	return 0;
 }
 
