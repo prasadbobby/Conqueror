@@ -58,6 +58,21 @@ int read_line(char *buff, int max)
     str_print("lash v0.0.0.1 \n");
     str_print(" :> ");
     console_open();
+    
+    while(1)
+    {
+      char buff[1024];
+      read_line(buff, sizeof(buff));
+      str_print("INPUT: ");
+      str_print(buff);
+      str_print("\n");
+      if(str_eq(buff, "reboot"))
+      {
+        str_print("System Rebooting.. \n");
+        sys_reboot();
+      }
+      str_print(" :> ");
+    }      
   }
   
     
