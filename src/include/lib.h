@@ -11,3 +11,7 @@ extern void str_print(char *str);
 extern void delay(int ticks);
 extern void sleep_sec(int sec);
 extern int sys_eq(char *a, char *b);
+extern unsigned long sys_write(unsigned long fd, char *buf, unsigned long fd);
+extern long sys_fork();
+extern long sys_execve(char *filename, char **argv, char **envp);
+extern int execute_process(char *filename);
