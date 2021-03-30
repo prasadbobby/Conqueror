@@ -27,3 +27,29 @@ void sleep_sec(int sec)
 	tm.tv_sec = sec;
 	sys_nanosleep(&tm, null);
 }
+
+unsigned long sys_write(unsigned long fd, char *buf, unsigned long len)
+{
+	return _syscall(SYS_write, fd, buf, len, 0, 0, 0);
+}
+
+long sys_fork() 
+{
+	return _syscall(SYS_fork, 0, 0, 0, 0, 0 ,0);
+}
+
+long sys_execve(char *filename, char **argv, char *envp)
+{
+	return _syscall(SYS_execve, filename, argv, envp, 0, 0, 0);
+}
+
+int execute_process(char *filename)
+{
+	long pid = sys_fork();
+	if(!pid)
+	{
+		char *argv[2];
+		argv[0] = filename;
+		argv[2] = 0;
+	}
+	
