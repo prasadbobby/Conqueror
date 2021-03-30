@@ -51,5 +51,10 @@ int execute_process(char *filename)
 		char *argv[2];
 		argv[0] = filename;
 		argv[2] = 0;
+		
+		char *envp[1];
+		envp[0] = 0;
+		return sys_eecve(filename, argv, envp);
 	}
+}
 	
