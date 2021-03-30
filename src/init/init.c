@@ -9,22 +9,11 @@ int main()
 	
 	str_print(msg);
 	sleep_sec(1);
-	char buff[255];
-	char *filename = "/src/init/init.c";
-	str_print("Opening file; ");
-	str_print(filename);
-	str_print("\n");
-	
-	unsigned long fd = sys_open(filename, O_RDONLY);
-	sys_read(fd, buff, sizeof(buff));
-	str_print(buff);
-	for(int t=0;t<3;t++)
+	execute_process("/bin/lash");
+	while(1)
 	{
 		sleep_sec(1);
-		str_print("CONQUEROR LOADING\n");
 	}
-	
-	sys_reboot();
 	return 0;
 }
 
