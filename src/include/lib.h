@@ -10,3 +10,4 @@ extern unsigned long str_len(char *sz);
 extern void str_print(char *str);
 extern void delay(int ticks);
 extern void sleep_sec(int sec);
+extern int sys_eq(char *a, char *b);
