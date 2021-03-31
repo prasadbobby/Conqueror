@@ -57,4 +57,10 @@ int execute_process(char *filename)
 		return sys_eecve(filename, argv, envp);
 	}
 }
+
+void *sys_brk(void *p)
+{
+	return _syscall(SYS_brk, p, 0, 0, 0, 0, 0);
+}
+
 	
