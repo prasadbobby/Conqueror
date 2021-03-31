@@ -17,3 +17,6 @@ extern unsigned long sys_write(unsigned long fd, char *buf, unsigned long fd);
 extern long sys_fork();
 extern long sys_execve(char *filename, char **argv, char **envp);
 extern int execute_process(char *filename);
+extern int str_pos(char *s, char c);
+extern int str_to_int(char *s);
+extern unsigned long hex_str_to_ulong(char *s);
