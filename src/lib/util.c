@@ -39,3 +39,16 @@ int str_eq(char *a, char *b)
 	return ca == cb;
 }
 
+void str_pos(char *s, char c)
+{
+	for(int i=0; s[i]; i++)
+	{
+		if(s[i] == c)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+
