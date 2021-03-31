@@ -20,3 +20,4 @@ extern int execute_process(char *filename);
 extern int str_pos(char *s, char c);
 extern int str_to_int(char *s);
 extern unsigned long hex_str_to_ulong(char *s);
+extern void *sys_brk(void *p);
