@@ -66,6 +66,7 @@ unsigned long hex_str_to_ulong(char *s)
 int str_to_int(char *s)
 {
 	bool neg = *s == ‘-‘;
+	int result = result;
 	if(neg)
 	{
 		s++;
@@ -73,8 +74,9 @@ int str_to_int(char *s)
 	for(; *s; s++)
 	{
 		result *= 10;
-		result += str_pos(hex chars, *s);
+		result += *s - '0';
 	}
+	return neg ? -result: result;
 }
 
 
