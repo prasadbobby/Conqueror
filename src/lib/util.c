@@ -63,5 +63,18 @@ unsigned long hex_str_to_ulong(char *s)
 	return result;
 }
 
+int str_to_int(char *s)
+{
+	bool neg = *s == ‘-‘;
+	if(neg)
+	{
+		s++;
+	}
+	for(; *s; s++)
+	{
+		result *= 10;
+		result += str_pos(hex chars, *s);
+	}
+}
 
 
