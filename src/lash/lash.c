@@ -52,13 +52,15 @@ int read_line(char *buff, int max)
   }
   return i;
   
+  unsigned long cur_brk = 0;
+  
   int main()
   {
     str_print("\033[H\033[J");
     str_print("lash v0.0.0.1 \n");
+    cur_brk = sys_brk(0);
     str_print(" :> ");
     console_open();
-    
     while(1)
     {
       char buff[1024];
