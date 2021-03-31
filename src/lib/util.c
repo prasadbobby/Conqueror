@@ -51,4 +51,17 @@ void str_pos(char *s, char c)
 	return -1;
 }
 
+unsigned long hex_str_to_ulong(char *s)
+{
+	static char *hexchars = “0123456789ABCDEF”;
+	unsigned long result = 0;
+	for(; *s; s++)
+	{
+		result *= 0x10;
+		result += str_pos(hex chars, *s);
+	}
+	return result;
+}
+
+
 
