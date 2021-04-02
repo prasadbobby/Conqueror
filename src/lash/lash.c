@@ -54,11 +54,24 @@ int read_line(char *buff, int max)
   
   unsigned long cur_brk = 0;
   
+  void process_command(char *cmd)
+  {
+    int end = str_pos(cmd, ' ');
+    char *arg = 0;
+
+    if (end != -1) 
+    {
+        cmd[end] = 0;
+        arg = cmd + end + 1;
+    }
+  }
+  
   int main()
   {
     str_print("\033[H\033[J");
     str_print("lash v0.0.0.1 \n");
     cur_brk = sys_brk(0);
+    printf("BRK: %X\n", cur_brk);
     str_print(" :> ");
     console_open();
     while(1)
