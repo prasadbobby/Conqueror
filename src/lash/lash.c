@@ -106,7 +106,7 @@ int read_line(char *buff, int max)
   {
     str_print("\033[H\033[J");
     str_print("lash v0.0.0.1 \n");
-    cur_brk = sys_brk(0);
+    cur_brk = (unsigned long)sys_brk(0);
     printf("BRK: %X\n", cur_brk);
     str_print(" :> ");
     console_open();
