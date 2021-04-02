@@ -4,3 +4,6 @@
 #define printf tfp_printf
 #define sprintf tfp_sprintf
 #endif
+void init_printf(void* putp,void (*putf) (void*,char));
+void tfp_printf(char *fmt, ...);
+void tfp_sprintf(char* s,char *fmt, ...);
