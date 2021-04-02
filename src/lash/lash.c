@@ -1,6 +1,7 @@
 #include <lib.h>
 #include <fcntl.h>
 #include <time.h>
+#include <printf.h>
 
 unsigned long console_fd = 0;
 void console_open()
@@ -59,10 +60,45 @@ int read_line(char *buff, int max)
     int end = str_pos(cmd, ' ');
     char *arg = 0;
 
-    if (end != -1) 
+    if(end != -1) 
     {
-        cmd[end] = 0;
-        arg = cmd + end + 1;
+      cmd[end] = 0;
+      arg = cmd + end + 1;
+    }
+    if(str_eq(cmd, "reboot"))
+    {
+      str_print("System Rebooting.. \n");
+      sys_reboot();
+    }
+    if(str_eq(cmd, "brk")) 
+    {
+      int size = 0;
+      if(arg)
+      {
+        size = str_to_int(arg);
+      }
+      void *new_val = (void *)(cur_brk + size);
+      void *addr = sys_brk(new_val);
+      printf("BRK(%X) = %X\n", new_val, addr);
+      cur_brk = (unsigned long)sys_brk(0);
+    }
+    if (str_eq(cmd, "store")) 
+    {
+      end = str_pos(arg, ' ');
+      arg[end] = 0;
+      char *val = arg + end + 1;
+      unsigned long addr = hex_str_to_ulong(arg);
+      int n = str_to_int(val);
+      printf("Storing %d at %X\n", n, addr);
+      int *p = (int *)addr;
+      *p = n;
+    }
+    if (str_eq(cmd, "fetch")) 
+    {
+      unsigned long addr = hex_str_to_ulong(arg);
+      int *p = (int *)addr;
+
+      printf("Fetched %d from %X\n", *p, addr);
     }
   }
   
@@ -78,14 +114,7 @@ int read_line(char *buff, int max)
     {
       char buff[1024];
       read_line(buff, sizeof(buff));
-      str_print("INPUT: ");
-      str_print(buff);
-      str_print("\n");
-      if(str_eq(buff, "reboot"))
-      {
-        str_print("System Rebooting.. \n");
-        sys_reboot();
-      }
+      process_command(buff);
       str_print(" :> ");
     }      
   }
