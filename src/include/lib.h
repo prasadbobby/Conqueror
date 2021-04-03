@@ -23,3 +23,7 @@ extern int str_to_int(char *s);
 extern unsigned long hex_str_to_ulong(char *s);
 extern void *sys_brk(void *p);
 extern int sys_select(int nfds, fd set *readfds, fd set *writefds, fd set *exceptfds, struct timeval *timeout);
+extern void mem_alloc(int size);
+extern void mem_set(void *p, char n, size_t size);
+extern void mem_copy(void *dest, void *source, size_t size);
+extern void str_copy(char *dest, char *source);
