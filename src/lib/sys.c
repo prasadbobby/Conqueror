@@ -63,4 +63,8 @@ void *sys_brk(void *p)
 	return _syscall(SYS_brk, p, 0, 0, 0, 0, 0);
 }
 
+int sys_select(int nfds, fd set *readfds, fd set *writefds, fd set *exceptfds, struct timeval *timeout)
+{
+	
+}
 	
