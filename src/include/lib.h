@@ -22,3 +22,4 @@ extern int str_pos(char *s, char c);
 extern int str_to_int(char *s);
 extern unsigned long hex_str_to_ulong(char *s);
 extern void *sys_brk(void *p);
+extern int sys_select(int nfds, fd set *readfds, fd set *writefds, fd set *exceptfds, struct timeval *timeout);
