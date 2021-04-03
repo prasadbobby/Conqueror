@@ -79,4 +79,11 @@ int str_to_int(char *s)
 	return neg ? -result: result;
 }
 
-
+void *mem_alloc(size int)
+{
+	unsigned long cur_brk = (unsigned long)sys_brk(0);
+	int num_pages = size/4096;
+	size = (num_pages +1) * 4096;
+	sys_brk((void *)(cur_brk+size));
+	return cur_break;
+}
