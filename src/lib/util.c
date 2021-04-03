@@ -87,3 +87,31 @@ void *mem_alloc(size int)
 	sys_brk((void *)(cur_brk+size));
 	return cur_break;
 }
+
+void mem_set(void *p, char n, size_t size)
+{
+	char *b = (char *)p;
+	
+	for(int i=0;i<size;i++)
+	{
+		*b++ = n;
+	}
+}
+
+void mem_copy(void *dest, void source, size_t size)
+{
+	char *d = (char *)dest;
+	char *s = (char *)source;
+	
+	for(int i=0;i<n;i++)
+	{
+		d[i] = s[i];
+	}
+}
+
+void str_copy(char *dest, char *source)
+{
+	mem_copy(dest, source, str_len(source) + 1);
+}
+
+	
