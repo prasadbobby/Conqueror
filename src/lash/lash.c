@@ -140,9 +140,9 @@ int read_line(char *buff, int max)
     str_print("lash v0.0.0.1 \n");
     cur_brk = (unsigned long)sys_brk(0);
     printf("BRK: %X\n", cur_brk);
-    str_print(" :> ");
     console_open();
-    load_event_devices()
+    load_event_devices();
+    str_print(" :> ");
     while(1)
     {
       char buff[1024];
