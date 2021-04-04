@@ -4,6 +4,15 @@
 #include <printf.h>
 
 unsigned long console_fd = 0;
+
+struct event_file
+{
+  struct event_file *next;
+  int fd;
+  char name[64];
+};
+
+
 void console_open()
 {
   console_fd = sys_open("/dev/console/", O_RDWR | O_NDELAY);
