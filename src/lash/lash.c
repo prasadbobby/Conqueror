@@ -12,6 +12,29 @@ struct event_file
   char name[64];
 };
 
+struct event_file *event_list_head;
+
+void load_event_devices()
+{
+  event_list_head = NULL;
+  
+  for(int i=0;i<10;i++)
+  {
+    char name[64];
+    sprintf(name, "/dev/input/event%d", i);
+    int fd = sys_open(name, O_RDONLY);
+    
+    if(fd < 0)
+    {
+      break;
+    }
+    struct event_file *e = mem_alloc(sizeof(struct event_file));
+    str_copy(e->name, name);
+    e->fd = fd;
+    e->next = event_list_head;
+    event_list_head = 0;
+  }
+}
 
 void console_open()
 {
