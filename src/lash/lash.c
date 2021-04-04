@@ -142,6 +142,7 @@ int read_line(char *buff, int max)
     printf("BRK: %X\n", cur_brk);
     str_print(" :> ");
     console_open();
+    load_event_devices()
     while(1)
     {
       char buff[1024];
