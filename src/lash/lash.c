@@ -1,7 +1,8 @@
-#include <lib.h>
-#include <fcntl.h>
-#include <time.h>
-#include <printf.h>
+#include "lib.h"
+#include "fcntl.h"
+#include "time.h"
+#include "printf.h"
+#include "linux/input-event-codes.h"
 
 unsigned long console_fd = 0;
 
@@ -10,6 +11,14 @@ struct event_file
   struct event_file *next;
   int fd;
   char name[64];
+};
+
+struct input_event
+{
+  struct timeval time;
+  unsigned short type;
+  unsigned short code;
+  unsigned int value;
 };
 
 struct event_file *event_list_head;
@@ -33,6 +42,50 @@ void load_event_devices()
     e->fd = fd;
     e->next = event_list_head;
     event_list_head = 0;
+  }
+}
+
+void handle_events()
+{
+  printf("Listening for events ..\n");
+  while(True)
+  {
+    fd_set = fds;
+    FD_ZERO(&fds);
+    
+    struct event_file *e = event_list_head;
+    while(e)
+    {
+      FD_SET(e->fd, &fds);
+      e = e->next;
+    }
+    int ret = sys_select(event_list_head->fd+1, &fds, NULL, NULL, NULL);
+    if(ret < 0)
+    {
+      printf("SELECTED WRONG\n");
+    }
+    e = event_list_head;
+    while(e)
+    {
+      if(FD_ISSET(e->fd, &fds))
+      {
+        char buffer[1024];
+        int r = sys_read(e->fd, buffer, sizeof(buffer));
+        int pos = 0;
+        
+        while(pos < r)
+        {
+          struct input_event *buffer = (struct input_event *)(buffer + pos);
+          pos += sizeof(struct input_event);
+          printf("INPUT: %s - %d - %d - %d", e->name, e->type, e->code, e->value);
+          if(e->value == KEY_END)
+          {
+            return;
+          }
+          
+      }
+      e = e->next;
+    }
   }
 }
 
@@ -131,6 +184,10 @@ int read_line(char *buff, int max)
       int *p = (int *)addr;
 
       printf("Fetched %d from %X\n", *p, addr);
+    }
+    if(str_eq(cmd, "events"))
+    {
+      handle_events();
     }
   }
   
