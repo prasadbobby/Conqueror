@@ -71,6 +71,14 @@ void handle_event(struct event_file *e, struct input_file *event)
         mouse_pos.x = new_x;
       }
     }
+    if(event->type == REL_Y)
+    {
+      int new_y = mouse_pos.y + event_value;
+      if(new_y >= 0 && new_y <= mouse_pos.max_y)
+      {
+        mouse_pos.y = new_y;
+      }
+    }
   }
   printf("INPUT: %s - %d - %d - %d", e->name, e->type, e->code, e->value);
   if(e->value == KEY_END)
