@@ -59,6 +59,15 @@ void load_event_devices()
   }
 }
 
+void handle_event(struct event_file *e, struct input_file *event)
+{
+  printf("INPUT: %s - %d - %d - %d", e->name, e->type, e->code, e->value);
+  if(e->value == KEY_END)
+  {
+     return;
+  }
+}
+
 void handle_events()
 {
   printf("Listening for events ..\n");
@@ -92,12 +101,7 @@ void handle_events()
           struct input_event *buffer = (struct input_event *)(buffer + pos);
           pos += sizeof(struct input_event);
           handle_event(e);
-          
-          printf("INPUT: %s - %d - %d - %d", e->name, e->type, e->code, e->value);
-          if(e->value == KEY_END)
-          {
-            return;
-          }
+        }
           
       }
       e = e->next;
