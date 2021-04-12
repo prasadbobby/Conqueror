@@ -59,7 +59,7 @@ void load_event_devices()
   }
 }
 
-void handle_event(struct event_file *e, struct input_file *event)
+bool handle_event(struct event_file *e, struct input_file *event)
 {
   if(event->code == EV_REL) 
   {
@@ -84,11 +84,13 @@ void handle_event(struct event_file *e, struct input_file *event)
   if(event->code == KEY_END)
   {
     printf("INPUT: %s - %d - %d - %d", e->name, e->type, e->code, e->value);
-    if(e->value == KEY_END)
+    if(e->type == KEY_END)
     {
-      return;
+      printf("EXITING\n");
+      return true;
     } 
   }
+  return false;
 }
 
 void handle_events()
@@ -123,7 +125,10 @@ void handle_events()
         {
           struct input_event *event = (struct input_event *)(buffer + pos);
           pos += sizeof(struct input_event);
-          handle_event(e, event);
+          if(handle_event(e, event))
+          {
+            return;
+          }
         }
           
       }
