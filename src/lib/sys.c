@@ -68,3 +68,5 @@ int sys_select(int nfds, fd set *readfds, fd set *writefds, fd set *exceptfds, s
 	return _syscall(SYS_select, ndfs, readfds, writefds, exceptfds, timeout, 0); 
 }
 	
+void *sys_mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);
+int sys_munmap(void *addr, size_t length);
