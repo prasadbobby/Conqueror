@@ -98,9 +98,9 @@ void handle_events()
         
         while(pos < r)
         {
-          struct input_event *buffer = (struct input_event *)(buffer + pos);
+          struct input_event *event = (struct input_event *)(buffer + pos);
           pos += sizeof(struct input_event);
-          handle_event(e);
+          handle_event(e, event);
         }
           
       }
