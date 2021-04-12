@@ -81,10 +81,13 @@ void handle_event(struct event_file *e, struct input_file *event)
     }
     printf("\rMOUSE PONITER: %d - %d              ", mouse_pos.x, mouse_pos.y);
   }
-  printf("INPUT: %s - %d - %d - %d", e->name, e->type, e->code, e->value);
-  if(e->value == KEY_END)
+  if(event->code == KEY_END)
   {
-     return;
+    printf("INPUT: %s - %d - %d - %d", e->name, e->type, e->code, e->value);
+    if(e->value == KEY_END)
+    {
+      return;
+    } 
   }
 }
 
