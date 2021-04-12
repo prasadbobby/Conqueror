@@ -21,11 +21,25 @@ struct input_event
   unsigned int value;
 };
 
+struct mouse_pos_info
+{
+  int x;
+  int y;
+  int max_x;
+  int max_y;
+};
+struct mouse_pos_info mouse_pos;
+
 struct event_file *event_list_head;
 
 void load_event_devices()
 {
   event_list_head = NULL;
+  
+  mouse_pos.x = 0;
+  mouse_pos.y = 0;
+  mouse_pos.max_x = 1024;
+  mouse_pos.max_y = 768;
   
   for(int i=0;i<10;i++)
   {
@@ -77,6 +91,8 @@ void handle_events()
         {
           struct input_event *buffer = (struct input_event *)(buffer + pos);
           pos += sizeof(struct input_event);
+          handle_event(e);
+          
           printf("INPUT: %s - %d - %d - %d", e->name, e->type, e->code, e->value);
           if(e->value == KEY_END)
           {
