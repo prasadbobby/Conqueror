@@ -61,9 +61,9 @@ void load_event_devices()
 
 bool handle_event(struct event_file *e, struct input_file *event)
 {
-  if(event->code == EV_REL) 
+  if(event->type == EV_REL) 
   {
-    if(event->type == REL_X)
+    if(event->code == REL_X)
     {
       int new_x = mouse_pos.x + event_value;
       if(new_x >= 0 && new_x <= mouse_pos.max_x)
@@ -71,7 +71,7 @@ bool handle_event(struct event_file *e, struct input_file *event)
         mouse_pos.x = new_x;
       }
     }
-    if(event->type == REL_Y)
+    if(event->code == REL_Y)
     {
       int new_y = mouse_pos.y + event_value;
       if(new_y >= 0 && new_y <= mouse_pos.max_y)
@@ -81,10 +81,10 @@ bool handle_event(struct event_file *e, struct input_file *event)
     }
     printf("\rMOUSE PONITER: %d - %d              ", mouse_pos.x, mouse_pos.y);
   }
-  if(event->code == KEY_END)
+  if(event->type == KEY_END)
   {
     printf("INPUT: %s - %d - %d - %d", e->name, e->type, e->code, e->value);
-    if(e->type == KEY_END)
+    if(e->code == KEY_END)
     {
       printf("EXITING\n");
       return true;
