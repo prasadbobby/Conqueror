@@ -61,6 +61,17 @@ void load_event_devices()
 
 void handle_event(struct event_file *e, struct input_file *event)
 {
+  if(event->code == EV_REL) 
+  {
+    if(event->type == REL_X)
+    {
+      int new_x = mouse_pos.x + event_value;
+      if(new_x >= 0 && new_x <= mouse_pos.max_x)
+      {
+        mouse_pos.x = new_x;
+      }
+    }
+  }
   printf("INPUT: %s - %d - %d - %d", e->name, e->type, e->code, e->value);
   if(e->value == KEY_END)
   {
