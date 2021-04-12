@@ -27,3 +27,6 @@ extern void mem_alloc(int size);
 extern void mem_set(void *p, char n, size_t size);
 extern void mem_copy(void *dest, void *source, size_t size);
 extern void str_copy(char *dest, char *source);
+
+extern void *sys_mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);
+extern int sys_munmap(void *addr, size_t length);
