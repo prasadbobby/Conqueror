@@ -12,4 +12,4 @@ $(TARGET): $(OBJECTS)
   $(CC) $(LDFLAGS) $(FLAGS) -o $(TARGET) $(OBJECTS)
   
   
-include ../base.mk
+# include ../base.mk
