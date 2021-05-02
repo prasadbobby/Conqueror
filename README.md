@@ -5,5 +5,6 @@ It is a low level Operating System build is build using Linux Kernel.
 <img src="images/image2.jpeg"></img>
 
 Create a folder and put a name. In my case it is OS_v1. After that, go to the folder and create directories.
-Create another Virtual Hard disk. Make that disk bootable. 
+Create another Virtual Hard disk. Make that disk bootable. Copy Linux kernel to /OS_v1/boot from /boot folder 
+syntax: #cp /boot/vminuz .
 
