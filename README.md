@@ -8,3 +8,4 @@ Create a folder and put a name. In my case it is OS_v1. After that, go to the fo
 Create another Virtual Hard disk. Make that disk bootable. Copy Linux kernel to /OS_v1/boot from /boot folder 
 syntax: #cp /boot/vminuz .
 
+Create src folder.
