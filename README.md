@@ -9,3 +9,4 @@ Create another Virtual Hard disk. Make that disk bootable. Copy Linux kernel to 
 syntax: #cp /boot/vminuz .
 
 Create src folder. Boot from the second harddisk.
+Add path for the linux kernel in src folder
