@@ -10,3 +10,4 @@ syntax: #cp /boot/vminuz .
 
 Create src folder. Boot from the second harddisk.
 Add path for the linux kernel in src folder
+<h2>Adding Boot Order to Linux</h2>
