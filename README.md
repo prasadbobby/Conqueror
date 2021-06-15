@@ -19,7 +19,7 @@
   <li>Type <b>lsblk</b> command</li>
   <li>It will display sdb. Its actually a Hard Drive</li>
   <li>Change the user to <b>root</b> by typing the command <b>sudo su</b></li>
-  <li>Type <b>cfdisk /dev/sdb</b><li>
+  <li>Type <b>cfdisk /dev/sdb</b></li>
   <li>It will open <b>Hard drive partition table</b></li>
   <li>Click on <b>[ New ] and hit enter</b></li>
   <li>Hit Enter again so that it will allocate default size</li>
