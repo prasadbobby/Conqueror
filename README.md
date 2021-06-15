@@ -13,3 +13,10 @@
   <li>Linux Basic Commands</li>
 </ul>
 <p>After getting all this, lets start building the Operating System using <b>Kernel</b></p>
+<h2>Checking Hard drive Partitions</h2>
+<ul>
+  <li>Open the <b>Terminal</b></li>
+  <li>Type <b>lsblk</b> command</li>
+  <li>It will display sdb. Its actually a Hard Drive</li>
+  <li>Change the user to <b>root</b> by typing the command <b>sudo su</b></li>
+  
