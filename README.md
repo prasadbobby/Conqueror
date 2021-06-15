@@ -21,10 +21,12 @@
   <li>Change the user to <b>root</b> by typing the command <b>sudo su</b></li>
   <li>Type <b>cfdisk /dev/sdb</b></li>
   <li>It will open <b>Hard drive partition table</b></li>
-  <li>Click on <b>[ New ] and hit enter</b></li>
+  <li>Click on <b>[ New ]</b> and hit enter</li>
   <li>Hit Enter again so that it will allocate default size</li>
   <li>Click on <b>[ Primary ]</b> and hit enter</li>
   <li>Click on <b>[ Bootable ]</b> and hit enter</li>
-  <li>And then click on <b>[ Write ]</b> and type <b>yes</b>and hit enter</li>
+  <li>And then click on <b>[ Write ]</b> and type <b>yes</b> and hit enter</li>
   <li>Finally, click on <b>[ Quit ]</b> to exit</li>
+  <li>Run <b>lsblk</b> command again, then we can see that new partition has been created</li>
+  <li>This is how we can create a new <b>Bootable</b> hard drive partition to test our OS</li>
 </ul>
