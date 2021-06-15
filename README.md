@@ -1,14 +1,15 @@
 # Conqueror OS_1.0
-It is a low level Operating System build is build using Linux Kernel.
-  It is also one of the distro in Linux.
-<img src="images/image1.jpeg"></img>
-<img src="images/image2.jpeg"></img>
+<h2>A low level Operating System designed using Linux Kernel</h2>
+<p>To develop the basic low level operating system, we need following</p>
+<ul>
+  <li>Virtual Machine</li>
+  <li>Clean Debian OS</li>
+  <li>KDE Desktop Environment</li>
+</ul>
+<p>You need to have basic knowledge on</p>
+<ul>
+  <li>Programming in C</li>
+  <li>x86_64 Assembly Programming</li>
+  <li>Linux Basic Commands</li>
+</ul>
 
-Create a folder and put a name. In my case it is OS_v1. After that, go to the folder and create directories.
-Create another Virtual Hard disk. Make that disk bootable. Copy Linux kernel to /OS_v1/boot from /boot folder 
-syntax: #cp /boot/vminuz .
-
-Create src folder. Boot from the second harddisk.
-Add path for the linux kernel in src folder
-<h2>Adding Boot Order to Linux</h2>
-<p>Step1: Write starting code in src folder</p>
