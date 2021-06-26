@@ -30,3 +30,7 @@
   <li>Run <b>lsblk</b> command again, then we can see that new partition has been created</li>
   <li>This is how we can create a new <b>Bootable</b> hard drive partition to test our OS</li>
 </ul>
+<h2>Settings Things to Ready</h2>
+<ul>
+  <li>Type <b>mkfs.ext4 /dev/sdb1</b></li>
+</ul>
