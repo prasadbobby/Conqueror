@@ -33,4 +33,13 @@
 <h2>Settings Things to Ready</h2>
 <ul>
   <li>Type <b>mkfs.ext4 /dev/sdb1</b></li>
+  <li>Go to the folder /mnt by typing <b>cd /mnt</b></li>
+  <li>Create a New Folder by typing <b>mkdir folder_name</b>. That will be Name of your OS.</li>
+  <li>Mount Your Folder using <b>mount /dev/sdb1 folder_name</b></li>
+  <li>Now, get into the OS by typing <b>cd folder_name</b></li>
+  <li>Remove all the things inside the folder by typing <b>rm -rvf *</b></li>
+  <li>Create following folders that will be used for OS Creation by typing the command given below</li>
+  <li><b>mkdir -p ./{etc,lib,lib64,bin,sbin,var,dev,proc,sys,run,tmp,src}</b></li>
+  <li>After creating the folders, set mknod by typing following commands</li>
+  <li><b>mknod -m 600 ./dev/console c 5 1</b></br><b>mknod -m 666 ./dev/null c 1 3</b></li>
 </ul>
