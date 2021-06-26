@@ -39,7 +39,12 @@
   <li>Now, get into the OS by typing <b>cd folder_name</b></li>
   <li>Remove all the things inside the folder by typing <b>rm -rvf *</b></li>
   <li>Create following folders that will be used for OS Creation by typing the command given below</li>
-  <li><b>mkdir -p ./{etc,lib,lib64,bin,sbin,var,dev,proc,sys,run,tmp,src}</b></li>
+  <li><b>mkdir -p ./{etc,lib,lib64,boot,bin,sbin,var,dev,proc,sys,run,tmp,src}</b></li>
   <li>After creating the folders, set mknod by typing following commands</li>
   <li><b>mknod -m 600 ./dev/console c 5 1</b></br><b>mknod -m 666 ./dev/null c 1 3</b></li>
+  <li>Go to boot folder by typing <b>cd boot</b></li>
+  <li>Now, let's copy the <b>Kernel File</b> and <b>Initial Ram Disk</b> from <b>/boot</b> folder</li>
+  <li><b>cp /bootvmlinuz-4.19.0-10-amd64 .</br>cp /boot/initrd.img-4.19.0-10.amd64</b></li>
+  <li>Now, let's install some dependences using <b>grub-install /dev/sdb --skip-fs-probe --boot-directory=/mnt/folder_name/boot</b></li>
+  <li>It will install <b>grub</b> folder. Now, let's start coding part</li>
 </ul>
