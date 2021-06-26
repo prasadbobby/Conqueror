@@ -45,6 +45,17 @@
   <li>Go to boot folder by typing <b>cd boot</b></li>
   <li>Now, let's copy the <b>Kernel File</b> and <b>Initial Ram Disk</b> from <b>/boot</b> folder</li>
   <li><b>cp /bootvmlinuz-4.19.0-10-amd64 .</br>cp /boot/initrd.img-4.19.0-10.amd64</b></li>
-  <li>Now, let's install some dependences using <b>grub-install /dev/sdb --skip-fs-probe --boot-directory=/mnt/folder_name/boot</b></li>
+  <li>Now, let's install some dependences using following command</li>
+  <li><b>grub-install /dev/sdb --skip-fs-probe --boot-directory=/mnt/folder_name/boot</b></li>
   <li>It will install <b>grub</b> folder. Now, let's start coding part</li>
+</ul>
+<h2>Start Coding for Operating System</h2>
+<ul>
+  <li>Make sure you are in <b>grub</b> directory created previously</li>
+  <li>Create a new file <b>grub.cfg</b> using any editor. My suggestion is to go with <b>VI</b></li>
+  <li>The code is at <a href="https://github.com/mahendragandham/Conqueror/blob/main/boot/grub/grub.cfg">[ grub.cfg ]. Once go through it</li>
+  <li>After that, Go to src folder created in <b>folder_name</b> or simple type <b>cd ../../src</b></li>
+  <li>Create folders <a href="https://github.com/mahendragandham/Conqueror/tree/main/src/lib">lib</a> and <a href="https://github.com/mahendragandham/Conqueror/tree/main/src/init">init</a> using <b>mkdir -p ./{lib,init}</b></li>
+  <li>Go to lib folder and create <b><a href="https://github.com/mahendragandham/Conqueror/blob/main/src/lib/start.S">start.S</a></b></li> 
+  <li>Get back to <b>src</b> folder and go to init folder and create <b><a href="https://github.com/mahendragandham/Conqueror/blob/main/src/init/init.c">init.c</a></b></li>
 </ul>
