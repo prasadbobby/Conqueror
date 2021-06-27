@@ -11,7 +11,6 @@
   </br><b>initrd /boot/initrd-4.19.0-10-amd64</b></li>
 </ul>
 <p>Above all this, the code is:</p>
-<details>
 <pre>
 set default=0
 set timeout=0
@@ -20,6 +19,6 @@ menuentry "Conqueror" {
   initrd /boot/initrd-4.19.0-10-amd64
 }
 </pre>
-</details>
+
 
   
