@@ -6,7 +6,7 @@
   <li>Let's create <b>Menuentry</b> and name it with OS Name => menuentry "Conqueror"</li>
   <li>Declare the <b>Kernel Version</b> with linux keyword
   </br><b>linux /boot/vmlinuz-4.19.0-10-amd64</b></li>
-  <li>We need to set Root Partition. For that, Assign path of sdb1 to <b>[ root ]</b> keyword and Declare ro</li>
+  <li>We need to set Root Partition. For that, Assign path of sdb1 to <b>[ root ]</b> keyword</li>
   <li>Declare the version of <b>Initial Ram Disk</b> with initrd keyword
   </br><b>initrd /boot/initrd-4.19.0-10-amd64</b></li>
 </ul>
