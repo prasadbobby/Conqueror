@@ -49,7 +49,7 @@
   <li><b>grub-install /dev/sdb --skip-fs-probe --boot-directory=/mnt/folder_name/boot</b></li>
   <li>It will install <b>grub</b> folder. Now, let's start coding part</li>
 </ul>
-<h2>Starting Coding Part for Operating System</h2>
+<h2>Starting Coding Part for Operating System.</h2>
 <ul>
   <li>Make sure you are in <b>grub</b> directory created previously</li>
   <li>Create a new file <b>grub.cfg</b> using any editor. My suggestion is to go with <b>VI</b></li>
