@@ -4,6 +4,8 @@
   <li>Set default to 0              =>  set default=0</li>
   <li>Set timeout to 0              =>  set timeout=0</li>
   <li>Let's create <b>Menuentry</b> and name it with OS Name => menuentry "OS_Name"</li>
+  <li>Declare the <b>Kernel Version</b> with linux keyword</li>
+  <li>Declare the version of <b>Initial Ram Disk</b> with initrd keyword</li>
 </ul>
 
   
